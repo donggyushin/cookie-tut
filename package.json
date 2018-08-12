@@ -1,0 +1,11 @@
+{
+  "name": "cookie-tut",
+  "version": "1.0.0",
+  "description": "tutorial for understand of cookie",
+  "main": "index.js",
+  "author": "rontend",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
