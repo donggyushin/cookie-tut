@@ -3,7 +3,7 @@ var cookieParser = require("cookie-parser");
 var app = express();
 
 //middleware
-app.use(cookieParser());
+app.use(cookieParser("sdjfkh234!@DW#@$211d"));
 
 //settings
 app.set("view engine", "ejs");
@@ -17,13 +17,13 @@ const products = [
 ];
 
 app.get("/count", (req, res) => {
-  if (req.cookies.count) {
-    var counter = req.cookies.count;
+  if (req.signedCookies.count) {
+    var counter = req.signedCookies.count;
   } else {
     var counter = 0;
   }
   counter = parseInt(counter) + 1;
-  res.cookie("count", counter);
+  res.cookie("count", counter, { signed: true });
   res.send("count : " + counter);
 });
 
