@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>products</title>
+    <style>
+        .button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border-radius: 10px;
+            margin-left: 50px;
+        }
+        .white {
+            color: white;
+            text-decoration: none;
+        }
+        .horizon {
+            display: flex;
+            margin-bottom: 5px;
+
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Products</h1>
+    <ul>
+
+     <%products.forEach(product => {%>
+        <div class="horizon">
+<li>
+    <%=product.name%>
+</li>
+<span class="button">
+    <a class="white" href='/cart/<%=product.id%>'>Add into the cart</a>
+</span>
+<span class="button">
+  <a href='/cart/delete/<%=product.id%>' class="white">Delete</a>
+</span>
+
+        </div>
+
+     <%})%>
+    </ul>
+    <span class="button"><a href="/cart" class="white">cart</a></span>
+  </body>
+</html>
